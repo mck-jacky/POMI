@@ -1,0 +1,245 @@
+h--> users: a list of user dictionaries
+--> events: a list of dictionaries
+--> valid_token_list: a list of tokens (strings)
+--> event_seats_list: a list of seats dictionaries
+
+users = [
+    --------------------- User 1 --------------------
+    {
+        'name_first': Borumy,
+        'name_last': Kim,
+        'login': {
+            'email': "borumy@gmail.com",
+            'password': "pomi-my-fav",
+        },
+        'payment_details': {
+            'cardholder_name': "Borumy Kim",
+            'card_number': 1234567812345678,
+            'expiry_month': 12,
+            'expiry_year': 2026,
+            'cvv_num': 123,
+        },
+        "profile_img_url": '',
+        "tickets": [
+            ---------- Ticket 1 ----------
+            {
+                'ticket_code': n8c925c,
+                'seat_number': 2,
+                'event_id': 1,
+                'event_title': "Doggo Fest",
+                'location': "UNSW Quad",
+                'start_time': "2023 09 20 10 10",
+            },
+            ---------- Ticket 2 ----------
+            {
+                'ticket_code': 78nc245i,
+                'seat_number': 10,
+                'event_id': 3,
+                'event_title': "The Nutcracker Ballet",
+                'location': "UNSW concert hall",
+                'start_time': "2024 03 20 15 30",
+            }
+        ],
+        "search_history": ["Ballet events", "UNSW", "Ballet"],
+    },
+    --------------------- User 2 --------------------
+        {
+        'name_first': "Jacky",
+        'name_last': "Ma",
+        'login': {
+            'email': "jacky@gmail.com",
+            'password': "jackyspassword",
+        },
+        'payment_details': {
+            'cardholder_name': "Jacky Ma",
+            'card_number': 9876543217654321,
+            'expiry_month': 10,
+            'expiry_year': 2027,
+            'cvv_num': 321,
+        },
+        "profile_img_url": '',
+        "tickets": [
+            ---------- Ticket 1 ----------
+            {
+                'ticket_code': cn824j98,
+                'seat_number': 2,
+                'event_id': 3,
+                'event_title': "Jacky's fav event",
+                'location': "CSE building",
+                'start_time': "2020 09 12 09 00",
+            },
+            ---------- Ticket 2 ----------
+            {
+                'ticket_code': 82nyc4,
+                'seat_number': 7,
+                'event_id': 10,
+                'event_title': "Jacky's fav event 2",
+                'location': "Red Centre Central Wing",
+                'start_time': "2023 12 20 09 30",
+            }
+        ],
+        "search_history": ["UNSW events", "Jacky"],
+    },
+    --------------------- User 3 --------------------
+    {
+        'name_first': "Max",
+        'name_last': "Helm",
+        ...
+        ...
+        ...
+    }
+]
+
+==================================================================================
+events = [
+    --------------------- Event 1 --------------------
+    {
+        'event_id': 1,
+        'creator_id': "pomi_orchstra@gmail.com",
+        'host': "POMI Symphony Orchestra",
+        'event_title': "Debussy's Nocturnes",
+        'event_description': "Come and explore the exquisite light and shade of impressionism",
+        'event_type': "Music",
+        'event_details': {
+            'venue': "POMI concert hall",
+            'start_date_time': "2022 12 31 08 30", 
+            'end_date_time': "2022 12 31 10 30" ,
+            'venue_type': "In-person",
+        },
+        'num_tickets_available': 1000,
+        'num_tickets_left': 100,  # integer
+        'ticket_price': 60.5,  # float
+        'price_min': 60, # float
+        'price_max': 70.5, #float
+        'image': "photo of concert hall",  # string
+        'booked_customers': ["jacky@gmail.com", "borumy@gmail.com", "luya@gmail.com", "max@hotmail.com", ........],
+        'number_of_seats': 1000,
+        'seating_plan_image': "seating_plan_image",  # string
+        'reviews': [
+            ---------- Review 1 ----------
+            {
+                'thread_id': 1,
+                'event_id': 1,
+                'customer_email': "luya@gmail.com",
+                'customer_name': "Luya Pan",
+                'review_content': "I really loved POMI orchstra's performance!"
+                'time_stamp': "2022-12-31-11:30", (# not yet sure if the timestamp really looks like this but it should just be a string(?))
+                'host_name': "POMI Symphony Orchestra",
+                'host_reply': "We're glad to hear that you enjoyed it!",
+                'host_reply_timestamp': "2022-12-31-11:45"
+            },
+            ---------- Review 2 ----------
+            {
+                'thread_id': 1,
+                'event_id': 1,
+                'customer_email': "max@gmail.com",
+                'customer_name': "Max Helm",
+                'review_content': "I really loved POMI orchstra's performance!"
+                'time_stamp': "2022-12-31-11:30", (# not yet sure if the timestamp really looks like this but it should just be a string(?))
+                'host_name': "POMI Symphony Orchestra",
+                'host_reply': "", (# empty because host hasn't replied to this review yet)
+                'host_reply_timestamp': ""
+            }
+        ]
+    },
+    --------------------- Event 2 --------------------
+    {
+        'event_id': 2,
+        'creator_id': "unsw_maths@gmail.com",
+        'host': "UNSW School of Mathematics and Statistics",
+        'event_title': "Thesis showcase",
+        'event_description': "You are invited!",
+        'event_type': "Hobbies",
+        'event_details': {
+            'venue': "School of Mathematics and Statistics",
+            'start_date_time': "2024 01 15 09 30", 
+            'end_date_time': "2024 01 15 10 30" ,
+            'venue_type': "In-person",
+        },
+        'num_tickets_available': 50,
+        'num_tickets_left': 47,  # integer
+        'ticket_price': 0.0,  # float
+        'price_min': 0.0, # float
+        'price_max': 0.0, #float
+        'image': "photo of 3.1415926535897932384626433832795028841971",  # string
+        'booked_customers': ["luya@gmail.com", "borumy@gmail.com", "botan@hotmail.com"],
+        'number_of_seats': 50,
+        'seating_plan_image': "classroom seats image",  # string
+        'reviews': []       # this event hasn't started so there is no reviews
+    }, 
+    --------------------- Event 3 --------------------
+    {
+        'event_id': 3,
+        'creator_id': "cse@gmail.com",
+        'host': "CSE UNSW",
+        ...
+        ...
+        ...
+    }
+]
+
+==================================================================================
+event_seats_list = [
+    --------------------- Seats list for event 1 --------------------
+    {
+        'event_id': 1,
+        'event_seats': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    },
+    --------------------- Seats list for event 2 --------------------
+    {
+        'event_id': 2,
+        'event_seats': [3, 4, 5, 6, 7, 8, 9] # assume seats 1, 2, 10 are booked by customers
+    },
+    --------------------- Seats list for event 3 --------------------
+    {
+        'event_id': 3,
+        'event_seats': [2, 3] # only seats 2 and 3 have not been booked
+    },
+    {
+    ...
+    ...
+    }
+]
+
+==================================================================================
+A review thread will have this structure:  
+    {
+        'thread_id': 1,
+        'event_id': 1,
+        'customer_email': "luya@gmail.com",
+        'customer_name': "Luya Pan",
+        'review_content': "I really loved POMI orchstra's performance!"
+        'time_stamp': "2022-12-31-11:30", (# not yet sure if the timestamp really looks like this but it should just be a string(?))
+        'host_name': "POMI Symphony Orchestra",
+        'host_reply': "We're glad to hear that you enjoyed it!",
+        'host_reply_timestamp': "2022-12-31-11:45"
+    }
+
+The "reviews" field in the event dictionary will consist of a list of these reviews:
+
+'reviews': [
+            ---------- Review 1 ----------
+            {
+                'thread_id': 1,
+                'event_id': 1,
+                'customer_email': "luya@gmail.com",
+                'customer_name': "Luya Pan",
+                'review_content': "I really loved POMI orchstra's performance!"
+                'time_stamp': "2022-12-31-11:30", (# not yet sure if the timestamp really looks like this but it should just be a string(?))
+                'host_name': "POMI Symphony Orchestra",
+                'host_reply': "We're glad to hear that you enjoyed it!",
+                'host_reply_timestamp': "2022-12-31-11:45"
+            },
+            ---------- Review 2 ----------
+            {
+                'thread_id': 1,
+                'event_id': 1,
+                'customer_email': "max@gmail.com",
+                'customer_name': "Max Helm",
+                'review_content': "I really loved POMI orchstra's performance!"
+                'time_stamp': "2022-12-31-11:30", (# not yet sure if the timestamp really looks like this but it should just be a string(?))
+                'host_name': "POMI Symphony Orchestra",
+                'host_reply': "", (# empty because host hasn't replied to this review yet)
+                'host_reply_timestamp': ""
+            }
+]

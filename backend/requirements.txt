@@ -1,0 +1,8 @@
+# These libraries will be downloaded by the deployment server to run our backend.
+Flask==1.1.2
+Flask-Cors==3.0.10
+PyJWT==2.0.1
+Pillow==7.2.0
+urllib3==1.26.3
+virtualenv==20.4.2
+Werkzeug==1.0.1

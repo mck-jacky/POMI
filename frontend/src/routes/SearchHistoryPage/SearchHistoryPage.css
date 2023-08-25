@@ -1,0 +1,93 @@
+.table {
+    color: rgb(255, 255, 255);
+}
+
+.search-history-page {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.table-header {
+  border-bottom: 2px solid black;
+  font-weight: bold;
+  text-align: center;
+}
+
+.page-title {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* min-height: 5vh; */
+    background-color: transparent;
+  }
+
+  .page-title .waviy {
+    position: relative;
+  }
+
+  .page-title .waviy span {
+    position: relative;
+    display: inline-block;
+    font-size: 40px;
+    color: #050000;
+    text-transform: uppercase;
+    animation: flip 8s infinite;
+    animation-delay: calc(0.2s * var(--i));
+  }
+
+  @keyframes flip {
+    0%, 80% {
+      transform: rotateY(360deg);
+    }
+  }
+
+.custom-card {
+border-bottom: none;
+}
+.ocean {
+  height: 5%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #015871;
+}
+
+.wave {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x;
+  position: absolute;
+  top: -198px;
+  width: 6400px;
+  height: 198px;
+  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  transform: translate3d(0, 0, 0);
+}
+
+.wave:nth-of-type(2) {
+  top: -175px;
+  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite, swell 7s ease -1.25s infinite;
+  opacity: 0.5;
+}
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+@keyframes swell {
+  0%,
+  100% {
+    transform: translate3d(0, -25px, 0);
+  }
+  50% {
+    transform: translate3d(0, 5px, 0);
+  }
+}

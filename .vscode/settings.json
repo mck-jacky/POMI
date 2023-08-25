@@ -1,0 +1,5 @@
+{
+  "python.analysis.typeCheckingMode": "off",
+  // "python.defaultInterpreterPath": "/home/abc/dev/ala/venv/bin/python"
+  // "python.defaultInterpreterPath": "~\\Anaconda3\\python"
+}
